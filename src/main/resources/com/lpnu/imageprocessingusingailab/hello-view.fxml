@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lpnu.imageprocessingusingailab.ImageProcessingController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Button mnemonicParsing="false" onAction="#onLoadImageButtonClick" text="Завантажити зображення" />
+   <Slider fx:id="angleInputSlider" accessibleText="rf" blockIncrement="0.01" majorTickUnit="10.0" max="360.0" min="0.01" onMouseReleased="#onAngleChange" showTickLabels="true" showTickMarks="true" value="1.0" visible="false" />
+   <Label fx:id="originalImageLabel" text="Початкове зображення" visible="false">
+      <font>
+         <Font size="25.0" />
+      </font></Label>
+   <ImageView fx:id="originalImage" fitHeight="350" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+      <children>
+         <Label fx:id="resultImageLabel" text="Результат" visible="false">
+            <font>
+               <Font size="25.0" />
+            </font>
+         </Label>
+         <Button fx:id="saveResultButton" mnemonicParsing="false" onAction="#onResultSave" text="Зберегти результат" visible="false">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Button>
+      </children>
+   </VBox>
+   <ImageView fx:id="resultImage" pickOnBounds="true" preserveRatio="true" />
+</VBox>
