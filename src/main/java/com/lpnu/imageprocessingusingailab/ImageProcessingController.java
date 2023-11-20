@@ -57,7 +57,7 @@ public class ImageProcessingController {
                 var resImage = histogramImageCalculator.calculateHistogramImage(originalImage.getImage(), originalImageCoordinate, angle);
                 resultImage.setImage(resImage);
                 resultImage.setPreserveRatio(true);
-                resultImageLabel.setText("Результат при крок градусі = " + angle + ", координата x = " + originalImageCoordinate.x() + " y = " + originalImageCoordinate.y());
+                resultImageLabel.setText(createResultImageLabel(angle, originalImageCoordinate));
                 resultImageLabel.setVisible(true);
                 saveResultButton.setVisible(true);
             });
@@ -78,6 +78,10 @@ public class ImageProcessingController {
         }
         Image image = resultImage.getImage();
         ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", fileToSave);
+    }
+
+    private String createResultImageLabel(double angle, Coordinate originalImageCoordinate) {
+        return "Результат при крок градусі = " + angle + ", координата x = " + originalImageCoordinate.x() + " y = " + originalImageCoordinate.y();
     }
 
 }
