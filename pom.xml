@@ -86,7 +86,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.lpnu.imageprocessingusingailab/com.lpnu.imageprocessingusingailab.HelloApplication
+                                com.lpnu.imageprocessingusingailab/com.lpnu.imageprocessingusingailab.ImageProcessingLabApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
